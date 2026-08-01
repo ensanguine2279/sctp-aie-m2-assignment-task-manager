@@ -1,0 +1,11 @@
+.taskPageLayout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .taskPageLayout {
+    grid-template-columns: 1fr;
+  }
+}

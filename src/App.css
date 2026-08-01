@@ -1,0 +1,53 @@
+/* src/App.css */
+:root {
+  --bg-app: #f1f5f9;
+  --bg-card: #ffffff;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-light: #eeebff;
+  --border: #e2e8f0;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+
+  --tone-slate-text: #334155;
+  --tone-slate-bg: #f8fafc;
+  --tone-slate-soft-bg: #f1f5f9;
+  --tone-slate-border: #e2e8f0;
+  --tone-amber-text: #9a6700;
+  --tone-amber-bg: #fff7ed;
+  --tone-amber-border: #fdba74;
+  --tone-green-text: #166534;
+  --tone-green-bg: #ecfdf5;
+  --tone-green-border: #86efac;
+  --tone-blue-text: #1d4ed8;
+  --tone-blue-bg: #eff6ff;
+  --tone-blue-border: #93c5fd;
+  --tone-rose-text: #be123c;
+  --tone-rose-bg: #fff1f2;
+  --tone-rose-border: #fda4af;
+
+  --radius-md: 6px;
+  --radius-lg: 8px;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+}
+
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.content-view {
+  margin-top: 24px;
+}

@@ -1,0 +1,10 @@
+.appHeader {
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.appHeader h1 {
+  margin: 0;
+  font-size: 24px;
+}

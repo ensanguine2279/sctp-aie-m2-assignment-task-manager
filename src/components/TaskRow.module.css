@@ -1,0 +1,109 @@
+.actionCell {
+  text-align: center;
+}
+
+.titleCell {
+  width: 56%;
+  text-align: left;
+}
+
+.titleLink {
+  display: block;
+  text-align: left;
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.titleLink:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.deleteButton {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 8px;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.deleteButton:hover {
+  background-color: #fff1f2;
+  border-color: #fda4af;
+  color: #be123c;
+  transform: translateY(-1px);
+}
+
+.deleteButton:focus-visible {
+  outline: 2px solid #bfdbfe;
+  outline-offset: 2px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 88px;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.status-todo {
+  color: var(--tone-slate-text);
+  background: var(--tone-slate-bg);
+  border-color: var(--tone-slate-border);
+}
+
+.status-in-progress {
+  color: var(--tone-amber-text);
+  background: var(--tone-amber-bg);
+  border-color: var(--tone-amber-border);
+}
+
+.status-done {
+  color: var(--tone-green-text);
+  background: var(--tone-green-bg);
+  border-color: var(--tone-green-border);
+}
+
+.priority-low {
+  color: var(--tone-slate-text);
+  background: var(--tone-slate-bg);
+  border-color: var(--tone-slate-border);
+}
+
+.priority-medium {
+  color: var(--tone-blue-text);
+  background: var(--tone-blue-bg);
+  border-color: var(--tone-blue-border);
+}
+
+.priority-high {
+  color: var(--tone-rose-text);
+  background: var(--tone-rose-bg);
+  border-color: var(--tone-rose-border);
+}
+
+@media (max-width: 740px) {
+  .badge {
+    min-width: 74px;
+    font-size: 10px;
+  }
+}
