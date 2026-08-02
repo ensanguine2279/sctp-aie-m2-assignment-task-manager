@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import PropTypes from "prop-types";
+
 import styles from "./TaskRow.module.css";
 
 function TaskRow({ task, statusLabel, priorityLabel, onDelete }) {
@@ -47,5 +49,18 @@ function TaskRow({ task, statusLabel, priorityLabel, onDelete }) {
     </tr>
   );
 }
+
+// PropTypes validation for TaskRow component
+TaskRow.propTypes = {
+  task: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    title: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    priority: PropTypes.string.isRequired,
+  }).isRequired,
+  statusLabel: PropTypes.string.isRequired,
+  priorityLabel: PropTypes.string.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};
 
 export default TaskRow;

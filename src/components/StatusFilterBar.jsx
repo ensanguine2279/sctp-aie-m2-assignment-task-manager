@@ -1,15 +1,11 @@
 import { useTask } from "../contexts/TaskContextInstance";
 
+import { statusOptions as options } from "../utils/data.js";
+
 import styles from "./StatusFilterBar.module.css";
 
 function StatusFilterBar() {
   const { statusFilter, setStatusFilter } = useTask();
-  const options = [
-    { value: "all", label: "All Tasks" },
-    { value: "todo", label: "To Do" },
-    { value: "in-progress", label: "In Progress" },
-    { value: "done", label: "Done" },
-  ];
 
   return (
     <div className={styles.filterBar}>

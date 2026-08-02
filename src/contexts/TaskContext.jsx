@@ -1,15 +1,26 @@
-import { useReducer } from "react";
+import { useReducer, useEffect } from "react";
 
 import PropTypes from "prop-types";
 
 import { TaskContext } from "./TaskContextInstance";
 import { taskReducer, initialTaskState } from "../reducers/taskReducer";
 
+import { STORAGE_KEY } from "../utils/data.js";
+
 // TaskProvider component to wrap the application and provide task state and dispatch function
 export function TaskProvider({ children }) {
   // Use useReducer to manage task state and dispatch actions
   const [state, dispatch] = useReducer(taskReducer, initialTaskState);
   const { tasks, statusFilter, priorityFilter } = state;
+
+  // Persist to localStorage whenever tasks change
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+    } catch (error) {
+      console.error("Failed to save tasks to localStorage:", error);
+    }
+  }, [tasks]);
 
   // Helper dispatch wrappers passed down via context
   const addTask = (task) => dispatch({ type: "ADD_TASK", payload: task });
@@ -51,6 +62,7 @@ export function TaskProvider({ children }) {
   );
 }
 
+// PropTypes validation for TaskProvider component
 TaskProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };

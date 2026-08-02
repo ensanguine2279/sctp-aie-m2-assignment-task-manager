@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { useTask } from "../contexts/TaskContextInstance";
 
+import { statusOptions, priorityOptions } from "../utils/data.js";
+
 import styles from "./AddTaskForm.module.css";
 
 export default function AddTaskForm() {
@@ -77,9 +79,16 @@ export default function AddTaskForm() {
             value={form.status}
             onChange={handleChange}
           >
-            <option value="todo">To Do</option>
-            <option value="in-progress">In Progress</option>
-            <option value="done">Done</option>
+            // Filter out the "all" option since it's not a valid status for a
+            new task
+            {statusOptions.map(
+              (option) =>
+                option.value !== "all" && (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ),
+            )}
           </select>
         </div>
 
@@ -91,9 +100,16 @@ export default function AddTaskForm() {
             value={form.priority}
             onChange={handleChange}
           >
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
+            // Filter out the "all" option since it's not a valid priority for a
+            new task
+            {priorityOptions.map(
+              (option) =>
+                option.value !== "all" && (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ),
+            )}
           </select>
         </div>
       </div>
