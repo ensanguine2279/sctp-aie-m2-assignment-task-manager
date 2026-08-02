@@ -22,8 +22,9 @@ function TaskList() {
         <thead>
           <tr>
             <th>Title</th>
-            <th>Status</th>
             <th>Priority</th>
+            <th>Status</th>
+
             <th className={styles.actionHeader}>Actions</th>
           </tr>
         </thead>

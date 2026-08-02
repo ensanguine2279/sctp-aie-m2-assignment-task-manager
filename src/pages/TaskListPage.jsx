@@ -1,5 +1,4 @@
-import StatusFilterBar from "../components/StatusFilterBar";
-
+import TaskFilters from "../components/TaskFilters";
 import TaskList from "../components/TaskList";
 import AddTaskForm from "../components/AddTaskForm";
 
@@ -9,7 +8,7 @@ export default function TaskListPage() {
   return (
     <div className={styles.taskPageLayout}>
       <div>
-        <StatusFilterBar />
+        <TaskFilters />
         <TaskList />
       </div>
       <aside>
