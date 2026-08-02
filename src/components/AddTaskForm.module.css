@@ -11,42 +11,6 @@
   font-size: 18px;
 }
 
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 12px;
-}
-
-.formGroup label {
-  font-size: 13px;
-  font-weight: 500;
-  margin-bottom: 4px;
-  color: var(--text-main);
-}
-
-.formGroup input,
-.formGroup textarea,
-.formGroup select {
-  padding: 8px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  font-family: inherit;
-  font-size: 14px;
-}
-
-.formGroup input:focus,
-.formGroup textarea:focus,
-.formGroup select:focus {
-  outline: none;
-  border-color: var(--primary);
-}
-
-.formRow {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
 .submitBtn {
   width: 100%;
   padding: 10px;

@@ -45,16 +45,16 @@ Main features shown: status filters, task table (Title/Status/Priority), delete 
 
 ### Easy
 
-- Show a task count summary above the list: "Showing X of Y tasks"
-- Disable the Add Task form's submit button while any required field is empty
+- [x] Show a task count summary above the list: "Showing X of Y tasks"
+- [x] Disable the Add Task form's submit button while any required field is empty
 
 ### Medium
 
-- Persist tasks in `localStorage` so they survive a page reload (use a lazy `useState` initialiser or
-  `useEffect` in `TaskContext`)
-- Add an `UPDATE_TASK` action and an inline edit form on the detail page
+- [x] Persist tasks in `localStorage` so they survive a page reload (use a lazy `useState` initialiser or
+      `useEffect` in `TaskContext`)
+- [x] Add an `UPDATE_TASK` action and an inline edit form on the detail page
 
 ### Hard
 
-- Add drag-and-drop reordering of tasks in the list using only browser drag events (no library)
-- Add a priority filter on top of the status filter, so both can be active at the same time
+- [x] Add drag-and-drop reordering of tasks in the list using only browser drag events (no library)
+- [x] Add a priority filter on top of the status filter, so both can be active at the same time
