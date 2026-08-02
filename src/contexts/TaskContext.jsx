@@ -33,6 +33,12 @@ export function TaskProvider({ children }) {
   const setPriorityFilter = (filterValue) =>
     dispatch({ type: "SET_PRIORITY_FILTER", payload: filterValue });
 
+  // Helper to clear both filters
+  const resetFilters = () => {
+    dispatch({ type: "SET_STATUS_FILTER", payload: "all" });
+    dispatch({ type: "SET_PRIORITY_FILTER", payload: "all" });
+  };
+
   // Filter tasks based on status and priority filters
   const filteredTasks = tasks.filter((task) => {
     if (statusFilter === "all") {
@@ -55,6 +61,7 @@ export function TaskProvider({ children }) {
         deleteTask,
         setStatusFilter,
         setPriorityFilter,
+        resetFilters,
       }}
     >
       {children}

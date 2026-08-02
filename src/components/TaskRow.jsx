@@ -14,16 +14,16 @@ function TaskRow({ task, statusLabel, priorityLabel, onDelete }) {
       </td>
       <td>
         <span
-          className={`${styles.badge} ${styles[`status-${task.status}`] ?? ""}`}
+          className={`${styles.badge} ${styles[`priority-${task.priority}`] ?? ""}`}
         >
-          {statusLabel}
+          {priorityLabel}
         </span>
       </td>
       <td>
         <span
-          className={`${styles.badge} ${styles[`priority-${task.priority}`] ?? ""}`}
+          className={`${styles.badge} ${styles[`status-${task.status}`] ?? ""}`}
         >
-          {priorityLabel}
+          {statusLabel}
         </span>
       </td>
       <td className={styles.actionCell}>
