@@ -50,11 +50,24 @@ Main features shown: status filters, task table (Title/Status/Priority), delete 
 
 ### Medium
 
-- [x] Persist tasks in `localStorage` so they survive a page reload (use a lazy `useState` initialiser or
-      `useEffect` in `TaskContext`)
+- [x] Persist tasks in `localStorage` so they survive a page reload (use a lazy `useState` initialiser or `useEffect` in `TaskContext`)
+
+  `loadInitialTasks()` ran while creating `initialState` at module load, making it eager. Moving it to `initState()`, it runs through `useReducer` initialization, making it lazy.
+
 - [x] Add an `UPDATE_TASK` action and an inline edit form on the detail page
+
+  Both add and update task functions use a shared `TaskForm` component
+  - Fields and layout are identical
+  - Easier UI updates
+  - Less duplicated code
+  - Faster feature work
 
 ### Hard
 
 - [x] Add drag-and-drop reordering of tasks in the list using only browser drag events (no library)
+
 - [x] Add a priority filter on top of the status filter, so both can be active at the same time
+
+  The previous `status` filter and new `priority` filter have been combined into a single `TaskFilter` component
+
+  Added a clear all filters button to remove both `status` and `priority` filters

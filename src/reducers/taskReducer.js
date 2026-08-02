@@ -13,11 +13,20 @@ function loadInitialTasks() {
   return initialTasks;
 }
 
-export const initialTaskState = {
-  tasks: loadInitialTasks(),
+// Initial state for the task reducer
+export const initialState = {
+  tasks: initialTasks,
   statusFilter: "all",
   priorityFilter: "all",
 };
+
+// Initialize state with tasks loaded from localStorage if available
+export function initState(baseState) {
+  return {
+    ...baseState,
+    tasks: loadInitialTasks(),
+  };
+}
 
 export function taskReducer(state, action) {
   switch (action.type) {
