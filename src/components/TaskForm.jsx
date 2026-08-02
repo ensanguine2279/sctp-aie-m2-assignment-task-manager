@@ -75,9 +75,6 @@ export default function TaskForm({ draft, setDraft, mode }) {
             }
             aria-label={`${textPrefix} task status`}
           >
-            <option value="todo">To do</option>
-            <option value="in-progress">In progress</option>
-            <option value="done">Done</option>
             {statusOptions
               // Filter out the "all" option since it's not a valid status for a new/edit task
               .filter((option) => option.value !== "all")

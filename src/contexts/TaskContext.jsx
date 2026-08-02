@@ -3,14 +3,14 @@ import { useReducer, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import { TaskContext } from "./TaskContextInstance";
-import { taskReducer, initialTaskState } from "../reducers/taskReducer";
+import { taskReducer, initialState, initState } from "../reducers/taskReducer";
 
 import { STORAGE_KEY } from "../utils/data.js";
 
 // TaskProvider component to wrap the application and provide task state and dispatch function
 export function TaskProvider({ children }) {
   // Use useReducer to manage task state and dispatch actions
-  const [state, dispatch] = useReducer(taskReducer, initialTaskState);
+  const [state, dispatch] = useReducer(taskReducer, initialState, initState);
   const { tasks, statusFilter, priorityFilter } = state;
 
   // Persist to localStorage whenever tasks change
