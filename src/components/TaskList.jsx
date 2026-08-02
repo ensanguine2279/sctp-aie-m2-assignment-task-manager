@@ -29,7 +29,7 @@ function TaskList() {
           </tr>
         </thead>
         <tbody>
-          {filteredTasks.map((task) => {
+          {filteredTasks.map((task, index) => {
             const statusLabel = getStatusLabel(task.status);
             const priorityLabel = getPriorityLabel(task.priority);
 
@@ -37,6 +37,7 @@ function TaskList() {
               <TaskRow
                 key={task.id}
                 task={task}
+                index={index}
                 statusLabel={statusLabel}
                 priorityLabel={priorityLabel}
                 onDelete={deleteTask}

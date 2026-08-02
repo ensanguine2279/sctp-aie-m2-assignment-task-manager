@@ -57,6 +57,11 @@ export function taskReducer(state, action) {
         ...state,
         priorityFilter: action.payload,
       };
+    case "REORDER_TASKS":
+      return {
+        ...state,
+        tasks: action.payload,
+      };
     default:
       return state;
   }
