@@ -25,6 +25,8 @@ export function TaskProvider({ children }) {
   // Helper dispatch wrappers passed down via context
   const addTask = (task) => dispatch({ type: "ADD_TASK", payload: task });
 
+  const updateTask = (task) => dispatch({ type: "UPDATE_TASK", payload: task });
+
   const deleteTask = (id) => dispatch({ type: "DELETE_TASK", payload: id });
 
   const setStatusFilter = (filterValue) =>
@@ -58,7 +60,9 @@ export function TaskProvider({ children }) {
         priorityFilter,
 
         addTask,
+        updateTask,
         deleteTask,
+
         setStatusFilter,
         setPriorityFilter,
         resetFilters,

@@ -26,6 +26,13 @@ export function taskReducer(state, action) {
         ...state,
         tasks: [...state.tasks, action.payload],
       };
+    case "UPDATE_TASK":
+      return {
+        ...state,
+        tasks: state.tasks.map((task) =>
+          task.id === action.payload.id ? action.payload : task,
+        ),
+      };
     case "DELETE_TASK":
       return {
         ...state,
