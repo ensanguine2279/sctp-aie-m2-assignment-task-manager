@@ -114,33 +114,34 @@ flowchart LR
 
 ### Easy
 
-- #### [x] Show a task count summary above the list: "Showing X of Y tasks"
-- #### [x] Disable the Add Task form's submit button while any required field is empty
+[x] Show a task count summary above the list: "Showing X of Y tasks"
+[x] Disable the Add Task form's submit button while any required field is empty
 
 ### Medium
 
-- #### [x] Persist tasks in `localStorage` so they survive a page reload (use a lazy `useState` initialiser or `useEffect` in `TaskContext`)
+[x] Persist tasks in `localStorage` so they survive a page reload (use a lazy `useState` initialiser or `useEffect` in `TaskContext`)
 
-  `loadInitialTasks()` ran while creating `initialState` at module load, making it eager. Moving it to `initState()`, it runs through `useReducer` initialization, making it lazy.
+`loadInitialTasks()` ran while creating `initialState` at module load, making it eager. Moving it to `initState()`, it runs through `useReducer` initialization, making it lazy.
 
-- #### [x] Add an `UPDATE_TASK` action and an inline edit form on the detail page
+[x] Add an `UPDATE_TASK` action and an inline edit form on the detail page
 
-  Both add and update task functions use a shared `TaskForm` component
-  - Fields and layout are identical
-  - Easier UI updates
-  - Less duplicated code
-  - Faster feature work
+Both add and update task functions use a shared `TaskForm` component
+
+- Fields and layout are identical
+- Easier UI updates
+- Less duplicated code
+- Faster feature work
 
 ### Hard
 
-- #### [x] Add drag-and-drop reordering of tasks in the list using only browser drag events (no library)
+[x] Add drag-and-drop reordering of tasks in the list using only browser drag events (no library)
 
-  Implemented a drag-depth counter pattern on the task row `<tr>` to prevent flicker casued by the highlight state toggling. As the cursor crosses child element boundaries, the browser recalculates drag targets. This produces parent-level enter/leave churn even while the cursor appears to be “inside the same row”. The visual highlight state depends on the boolean `isDraggingOver`. These enter/leave churn flips the boolean many times per second, causing the recalculate/repaint of the element style, resulting in the flicker.
+Implemented a drag-depth counter pattern on the task row `<tr>` to prevent flicker casued by the highlight state toggling. As the cursor crosses child element boundaries, the browser recalculates drag targets. This produces parent-level enter/leave churn even while the cursor appears to be “inside the same row”. The visual highlight state depends on the boolean `isDraggingOver`. These enter/leave churn flips the boolean many times per second, causing the recalculate/repaint of the element style, resulting in the flicker.
 
-  The drag-depth counter solves this by only clearing highlight when the cursor truly exits the whole row (drag depth returns to 0).
+The drag-depth counter solves this by only clearing highlight when the cursor truly exits the whole row (drag depth returns to 0).
 
-- #### [x] Add a priority filter on top of the status filter, so both can be active at the same time
+[x] Add a priority filter on top of the status filter, so both can be active at the same time
 
-  The previous `status` filter and new `priority` filter have been combined into a single `TaskFilters` component
+The previous `status` filter and new `priority` filter have been combined into a single `TaskFilters` component
 
-  Added a clear all filters button to remove both `status` and `priority` filters
+Added a clear all filters button to remove both `status` and `priority` filters
