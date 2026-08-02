@@ -29,6 +29,9 @@ export function TaskProvider({ children }) {
 
   const deleteTask = (id) => dispatch({ type: "DELETE_TASK", payload: id });
 
+  const reorderTasks = (newTasks) =>
+    dispatch({ type: "REORDER_TASKS", payload: newTasks });
+
   const setStatusFilter = (filterValue) =>
     dispatch({ type: "SET_STATUS_FILTER", payload: filterValue });
 
@@ -62,6 +65,7 @@ export function TaskProvider({ children }) {
         addTask,
         updateTask,
         deleteTask,
+        reorderTasks,
 
         setStatusFilter,
         setPriorityFilter,

@@ -41,6 +41,75 @@ Main features shown: status filters, task table (Title/Status/Priority), delete 
 
 ![Task Manager main features](public/screenshots/main-features.png)
 
+## Architecture Diagrams
+
+### 1) React Component Design Diagram
+
+```mermaid
+flowchart TD
+  A[main.jsx] --> B[App]
+  B --> C[TaskProvider]
+  C --> D[BrowserRouter]
+  D --> E[Header]
+  D --> F[Routes]
+
+  F -->|/tasks| G[TaskListPage]
+  F -->|/tasks/:id| H[TaskDetailPage]
+  F -->|*| I[Navigate to /tasks]
+
+  G --> J[TaskFilters]
+  G --> K[TaskList]
+  G --> L[AddTaskForm]
+  L --> M[TaskForm mode=create]
+
+  K --> N[TaskRow x N]
+
+  H -->|isEditing=false| O[Task Detail View]
+  H -->|isEditing=true| P[TaskForm mode=edit]
+
+  J -. useTask .-> C
+  K -. useTask .-> C
+  N -. useTask .-> C
+  L -. useTask .-> C
+  H -. useTask .-> C
+```
+
+### 2) State and Data Flow Diagram
+
+```mermaid
+flowchart LR
+  A[TaskProvider] --> B[useReducer taskReducer]
+  B --> C[state: tasks, statusFilter, priorityFilter]
+  C --> A
+
+  D[initState lazy initializer] --> B
+  D --> E[localStorage read]
+
+  A --> F[addTask]
+  A --> G[updateTask]
+  A --> H[deleteTask]
+  A --> I[reorderTasks]
+  A --> J[setStatusFilter]
+  A --> K[setPriorityFilter]
+  A --> L[resetFilters]
+
+  F --> B
+  G --> B
+  H --> B
+  I --> B
+  J --> B
+  K --> B
+  L --> B
+
+  C --> M[filteredTasks computed in provider]
+  M --> N[TaskList and TaskFilters UI]
+
+  C --> O[useEffect persist tasks]
+  O --> P[localStorage write]
+
+  Q[TaskRow drag-and-drop] --> I
+```
+
 ## Bonus Challenges Completed
 
 ### Easy
@@ -66,8 +135,12 @@ Main features shown: status filters, task table (Title/Status/Priority), delete 
 
 - [x] Add drag-and-drop reordering of tasks in the list using only browser drag events (no library)
 
+  Implemented a drag-depth counter pattern on the task row `<tr>` to prevent flicker casued by the highlight state toggling. As the cursor crosses child element boundaries, the browser recalculates drag targets. This produces parent-level enter/leave churn even while the cursor appears to be “inside the same row”. The visual highlight state depends on the boolean `isDraggingOver`. These enter/leave churn flips the boolean many times per second, causing the recalculate/repaint of the element style, resulting in the flicker.
+
+  The drag-depth counter solves this by only clearing highlight when the cursor truly exits the whole row (drag depth returns to 0).
+
 - [x] Add a priority filter on top of the status filter, so both can be active at the same time
 
-  The previous `status` filter and new `priority` filter have been combined into a single `TaskFilter` component
+  The previous `status` filter and new `priority` filter have been combined into a single `TaskFilters` component
 
   Added a clear all filters button to remove both `status` and `priority` filters
