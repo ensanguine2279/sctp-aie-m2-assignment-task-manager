@@ -37,9 +37,13 @@ npm run preview
 
 ## Screenshot (Main Features)
 
-Main features shown: status filters, task table (Title/Status/Priority), delete actions, and add-task form.
+Main features shown: status and priority filters, task table (Title/Status/Priority), delete actions, and add-task form.
 
-![Task Manager main features](public/screenshots/main-features.png)
+![Task Manager main features](public/screenshots/main-features.jpg)
+
+## Demo Video
+
+- [Watch Demo on YouTube](https://youtu.be/SGnC-ytiJCw)
 
 ## Architecture Diagrams
 
