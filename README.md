@@ -41,9 +41,9 @@ Main features shown: status and priority filters, task table (Title/Status/Prior
 
 ![Task Manager main features](public/screenshots/main-features.jpg)
 
-## Demo Video
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=white)](https://youtu.be/SGnC-ytiJCw) [Watch Demo on YouTube](https://youtu.be/SGnC-ytiJCw)
 
-- [Watch Demo on YouTube](https://youtu.be/SGnC-ytiJCw)
+<br /><br />
 
 ## Architecture Diagrams
 
@@ -113,6 +113,8 @@ flowchart LR
 
   Q[TaskRow drag-and-drop] --> I
 ```
+
+<br /><br />
 
 ## Bonus Challenges Completed
 
