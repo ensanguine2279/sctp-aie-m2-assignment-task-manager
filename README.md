@@ -153,3 +153,16 @@ flowchart LR
   The previous `status` filter and new `priority` filter have been combined into a single `TaskFilters` component
 
   Added a clear all filters button to remove both `status` and `priority` filters
+
+<br /><br />
+
+## AI and Tools
+
+Copilot and ChatGPT were used in the following situations:
+
+- Styling of the app and JSX components
+- Removing redundant CSS elements
+- Understanding concepts with drag-and-drop of web elements
+- Writing documentation inline, as well as, in README.md
+- Generating architecture diagrams
+- Optimizing video and image size to suit GitHub
