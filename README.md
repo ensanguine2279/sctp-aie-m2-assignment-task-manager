@@ -43,7 +43,7 @@ Main features shown: status and priority filters, task table (Title/Status/Prior
 
 ![Task Manager main features](public/screenshots/main-features.jpg)
 
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=white)](https://youtu.be/SGnC-ytiJCw) [Watch Demo on YouTube](https://youtu.be/SGnC-ytiJCw)
+[![Watch Feature Demo on YouTube](https://img.shields.io/badge/Watch%20Feature%20Demo%20on%20YouTube-FF0000?logo=youtube&logoColor=white)](https://youtu.be/SGnC-ytiJCw)
 
 <br /><br />
 
